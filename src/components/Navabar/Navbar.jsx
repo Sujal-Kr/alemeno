@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import Signup from '../Modal/Signup'
@@ -22,8 +22,8 @@ const Navbar = () => {
                 <Link to='/'>CourseHub</Link>
             </div>
             <div className={`nav-list text-sm md:text-base gap-6   flex md:gap-8 md:items-center  ${active?"active":""}`}>
-                <Link onClick={()=>setActive(false)} to="/courses">Courses</Link>
-                <Link onClick={()=>setActive(false)} to='/dashboard'>Dashboard</Link>
+                <NavLink onClick={()=>setActive(false)} className="py-2 uppercase" to="/courses">Courses</NavLink>
+                <NavLink onClick={()=>setActive(false)} className="py-2 uppercase" to='/dashboard'>Dashboard</NavLink>
                 {!isLoggedIn ?
                     <button
                         onClick={() => setMode(true)}
